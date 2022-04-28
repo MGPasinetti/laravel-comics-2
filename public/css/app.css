@@ -1,0 +1,104 @@
+.container-centered {
+    max-width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+}
+
+
+
+
+@mixin flex-layout($justify, $align, $wrap) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+}
+
+@mixin img-layout($width, $heigth, $object-fit, $object-position) {
+    width: $width;
+    height: $heigth;
+    -o-object-fit: $object-fit;
+       object-fit: $object-fit;
+    -o-object-position: $object-position;
+       object-position: $object-position;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+body {
+  background-color: yellow;
+}
+body header .dc-sites {
+  height: 1.5rem;
+  background-color: #0282F9;
+  color: white;
+  font-size: 10px;
+}
+body header .dc-sites .container-centered {
+  justify-content: flex-end;
+  align-items: center;
+  gap: 3rem;
+}
+body header .logo-nav-search {
+  height: 5rem;
+  background-color: white;
+}
+body header .logo-nav-search .container-centered {
+  justify-content: space-between;
+  align-items: center;
+}
+body header .logo-nav-search .container-centered img {
+  height: 4rem;
+}
+body header .logo-nav-search .container-centered nav {
+  height: 100%;
+}
+body header .logo-nav-search .container-centered nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  height: 100%;
+  align-items: center;
+}
+body header .logo-nav-search .container-centered nav ul li {
+  height: 100%;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid transparent;
+}
+body header .logo-nav-search .container-centered nav ul li a {
+  display: inline-block;
+  line-height: 80px;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #605f5f;
+  font-size: 12px;
+  font-weight: 600;
+}
+body header .logo-nav-search .container-centered nav ul li.active a {
+  color: #0282F9;
+}
+body header .logo-nav-search .container-centered nav ul li.active {
+  border-bottom: 3px solid #0282F9;
+}
+body header .logo-nav-search .container-centered .searchbar {
+  border-bottom: 1px solid #0282F9;
+}
+body header .logo-nav-search .container-centered .searchbar input {
+  width: 5rem;
+  border: none;
+  text-align: end;
+  color: #080808;
+  font-weight: 700;
+  font-size: 12px;
+}
+body header .logo-nav-search .container-centered .searchbar i {
+  color: #605f5f;
+}

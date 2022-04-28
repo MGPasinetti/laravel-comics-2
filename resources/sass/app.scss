@@ -1,0 +1,93 @@
+//
+@import url(partials/_general.scss);
+@import url(partials/_mixins.scss);
+@import url(partials/_reset.scss);
+@import url(partials/_variables.scss);
+
+body {
+    background-color: yellow;
+
+    header {
+        .dc-sites {
+            height: 1.5rem;
+            background-color: #0282F9;
+            color: white;
+            font-size: 10px;
+
+            .container-centered {
+                justify-content: flex-end;
+                align-items: center;
+                gap: 3rem;
+            }
+
+        }
+
+        .logo-nav-search {
+            height: 5rem;
+            background-color: white;
+
+            .container-centered {
+                justify-content: space-between;
+                align-items: center;
+
+                img {
+                    height: 4rem;
+                }
+
+                nav {
+                    height: 100%;
+
+                    ul {
+                        display: flex;
+                        list-style: none;
+                        gap: 1.5rem;
+                        height: 100%;
+                        align-items: center;
+
+                        li {
+                            height: 100%;
+                            border-bottom: 3px solid transparent;
+                            border-top: 3px solid transparent;
+
+                            a {
+                                display: inline-block;
+                                line-height: 80px;
+                                vertical-align: middle;
+                                text-decoration: none;
+                                color: #605f5f;
+                                font-size: 12px;
+                                font-weight: 600;
+                            }
+
+                            &.active a {
+                                color: #0282F9;
+                            }
+                            &.active {
+                                border-bottom: 3px solid #0282F9;
+                            }
+                        }
+
+                    }
+                }
+
+                .searchbar {
+                    border-bottom: 1px solid #0282F9;
+
+                    input {
+                        width: 5rem;
+                        border: none;
+                        text-align: end;
+                        color: #080808;
+                        font-weight: 700;
+                        font-size: 12px;
+                    }
+
+                    i {
+                        color: #605f5f;
+                    }
+                }
+            }
+        }
+    }
+}
+
