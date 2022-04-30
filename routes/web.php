@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// })->name('home');
-
 Route::get('/', function() {
    return view('pages.comics');
 })->name('comics');
@@ -52,7 +48,6 @@ Route::get('/fans', function() {
 Route::get('/news', function() {
     return view('pages.news');
 })->name('news');
-
 
 Route::get('/shop', function() {
     return view('pages.shop');

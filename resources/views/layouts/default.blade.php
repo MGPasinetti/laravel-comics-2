@@ -8,9 +8,7 @@
     <body>
         @include('includes.header')
 
-        <main>
-            @yield('content')
-        </main>
+        @yield('content')
 
         @include('includes.footer')
     </body>

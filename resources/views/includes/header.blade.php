@@ -15,20 +15,19 @@
     <div class="logo-nav-search">
 
         <div class="container-centered">
-            <img src="images/dc-logo.png" alt="">
+            <img src="images/dc-logo.png" alt="dc-logo">
 
             <nav>
                 <ul>
-                    <li class="{{ (Route::current()->getName() == 'characters') ? 'active' : '' }}"><a href="{{ route('characters') }}">CHARACTERS</a></li>
-                    <li class="{{ (Route::current()->getName() == 'comics') ? 'active' : '' }}"><a href="{{ route('comics') }}">COMICS</a></li>
-                    <li class="{{ (Route::current()->getName() == 'movies') ? 'active' : '' }}"><a href="{{ route('movies') }}">MOVIES</a></li>
-                    <li class="{{ (Route::current()->getName() == 'TV') ? 'active' : '' }}"><a href="{{ route('TV') }}">TV</a></li>
-                    <li class="{{ (Route::current()->getName() == 'games') ? 'active' : '' }}"><a href="{{ route('games') }}">GAMES</a></li>
-                    <li class="{{ (Route::current()->getName() == 'collectibles') ? 'active' : '' }}"><a href="{{ route('collectibles') }}">COLLECTIBLES</a></li>
-                    <li class="{{ (Route::current()->getName() == 'videos') ? 'active' : '' }}"><a href="{{ route('videos') }}">VIDEOS</a></li>
-                    <li class="{{ (Route::current()->getName() == 'fans') ? 'active' : '' }}"><a href="{{ route('fans') }}">FANS</a></li>
-                    <li class="{{ (Route::current()->getName() == 'news') ? 'active' : '' }}"><a href="{{ route('news') }}">NEWS</a></li>
-                    <li class="{{ (Route::current()->getName() == 'shop') ? 'active' : '' }}"><a href="{{ route('shop') }}">SHOP <i class="fa-solid fa-caret-down" style="color: #0282F9"></i></a></li>
+                    @php
+                        $arrNavMenu = config('navmenu');
+                    @endphp
+
+                    @foreach ($arrNavMenu as $menuItem)
+                        <li class="{{ in_array(Route::currentRouteName(), $menuItem['route']) ? 'active' : '' }}">
+                            <a href="{{ route($menuItem['route'][0]) }}">{{ strtoupper($menuItem['name']) }}</a>
+                        </li>
+                    @endforeach
                 </ul>
             </nav>
 

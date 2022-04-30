@@ -89,5 +89,16 @@ body {
             }
         }
     }
+
+    main {
+        background-color: aquamarine;
+        // height: 40rem;
+        img {
+            width: 100%;
+            height: 30vh;
+            object-fit: cover;
+            object-position: top;
+        }
+    }
 }
 

@@ -102,3 +102,12 @@ body header .logo-nav-search .container-centered .searchbar input {
 body header .logo-nav-search .container-centered .searchbar i {
   color: #605f5f;
 }
+body main {
+  background-color: aquamarine;
+  height: 40rem;
+}
+body main img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
