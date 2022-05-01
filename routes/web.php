@@ -31,7 +31,10 @@ Route::get('/{id}', function($id) {
     $selectedSerie = $series->firstWhere('id', $id);
     if ( $selectedSerie === null ) abort(404);
 
-    return view('pages.serie', $series);
+    return view('pages.serie', [
+        'name' => $selectedSerie['name'],
+        'serie' => $selectedSerie
+    ]);
 })->name('serie');
 
 Route::get('/movies', function() {

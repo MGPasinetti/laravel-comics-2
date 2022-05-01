@@ -4,7 +4,7 @@
 
 @section('content')
    <main>
-      <img src="images/jumbotron.jpg" alt="">
+      <img class="img-hero" src="images/jumbotron.jpg" alt="">
 
       <div class="container-centered">
          <div class="title-section">
@@ -25,7 +25,10 @@
                </div>
             @endforeach
          </div>
-      </div>
 
+         <button>
+            load more
+         </button>
+      </div>
    </main>
 @stop
