@@ -2,20 +2,30 @@
 
 @section('title', 'Comics')
 
-@section('css')
-   <link href="{{ asset('/app.scss') }}" />
-@stop
-
 @section('content')
    <main>
       <img src="images/jumbotron.jpg" alt="">
-      {{-- <div class="container">
-            <CardSerie
-               v-for="serie in series"
-               :key="serie.name"
-               :serie-thumb="serie.thumb"
-               :serie-name="serie.name"
-            />
-      </div> --}}
+
+      <div class="container-centered">
+         <div class="title-section">
+            current series
+         </div>
+
+         <div class="grid-series">
+            @php
+               $arrSeries = config('series');
+            @endphp
+
+            @foreach ($arrSeries as $serie)
+               <div class="card-serie">
+                  <a href="{{ route('serie', ['id' => $serie['id']]) }}">
+                     <img src="{{ $serie['thumb'] }}" alt="{{ $serie['name'] }}">
+                     <h5>{{ $serie['name'] }}</h5>
+                  </a>
+               </div>
+            @endforeach
+         </div>
+      </div>
+
    </main>
 @stop

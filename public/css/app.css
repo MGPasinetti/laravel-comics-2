@@ -3,6 +3,7 @@
     height: 100%;
     margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
 }
 
 
@@ -32,6 +33,7 @@
 html {
     font-family: 'Lato', sans-serif;
     font-size: 16px;
+    line-height: 1.5;
 }
 body {
   background-color: yellow;
@@ -96,18 +98,64 @@ body header .logo-nav-search .container-centered .searchbar input {
   border: none;
   text-align: end;
   color: #080808;
-  font-weight: 700;
   font-size: 12px;
 }
 body header .logo-nav-search .container-centered .searchbar i {
   color: #605f5f;
 }
 body main {
-  background-color: aquamarine;
-  height: 40rem;
+  background-color: black;
 }
 body main img {
   width: 100%;
+  height: 400px;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+body main .title-section {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #0282F9;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 600;
+  position: relative;
+  top: -2rem;
+}
+body main .grid-series {
+  width: 100%;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+}
+body main .grid-series .card-serie {
+  width: calc((100% - 5rem) / 6);
+  margin-bottom: 1.5rem;
+}
+body main .grid-series .card-serie a {
+  text-decoration: none;
+  color: white;
+}
+body main .grid-series .card-serie a img {
+  width: 100%;
+  height: 148px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+body main .grid-series .card-serie a h5 {
+  margin-top: 1rem;
+  font-size: 11px;
+  text-transform: uppercase;
 }

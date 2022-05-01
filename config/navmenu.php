@@ -2,12 +2,12 @@
 
 return [
     [
-        'route' => ['comics'],
-        'name'  => 'comics'
-    ],
-    [
         'route' => ['characters'],
         'name'  => 'characters'
+    ],
+    [
+        'route' => ['comics'],
+        'name'  => 'comics'
     ],
     [
         'route' => ['movies'],

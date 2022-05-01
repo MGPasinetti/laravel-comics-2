@@ -13,13 +13,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/characters', function() {
+    return view('pages.characters');
+})->name('characters');
+
 Route::get('/', function() {
-   return view('pages.comics');
+
+    $series = config('series');
+
+   return view('pages.comics', $series);
 })->name('comics');
 
-Route::get('/characters', function() {
-   return view('pages.characters');
-})->name('characters');
+Route::get('/{id}', function($id) {
+
+    $series = collect(config('series'));
+
+    $selectedSerie = $series->firstWhere('id', $id);
+    if ( $selectedSerie === null ) abort(404);
+
+    return view('pages.serie', $series);
+})->name('serie');
 
 Route::get('/movies', function() {
     return view('pages.movies');
