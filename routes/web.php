@@ -24,19 +24,6 @@ Route::get('/', function() {
    return view('pages.comics', $series);
 })->name('comics');
 
-Route::get('/{id}', function($id) {
-
-    $series = collect(config('series'));
-
-    $selectedSerie = $series->firstWhere('id', $id);
-    if ( $selectedSerie === null ) abort(404);
-
-    return view('pages.serie', [
-        'name' => $selectedSerie['name'],
-        'serie' => $selectedSerie
-    ]);
-})->name('serie');
-
 Route::get('/movies', function() {
     return view('pages.movies');
 })->name('movies');
@@ -68,6 +55,19 @@ Route::get('/news', function() {
 Route::get('/shop', function() {
     return view('pages.shop');
 })->name('shop');
+
+Route::get('/{id}', function($id) {
+
+    $series = collect(config('series'));
+
+    $selectedSerie = $series->firstWhere('id', $id);
+    if ( $selectedSerie === null ) abort(404);
+
+    return view('pages.serie', [
+        'name' => $selectedSerie['name'],
+        'serie' => $selectedSerie
+    ]);
+})->name('serie');
 
 /*
 Create un nuovo progetto Laravel, su cui lavoreremo sia oggi che domani.
